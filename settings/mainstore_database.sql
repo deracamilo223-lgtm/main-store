@@ -13,3 +13,7 @@ CREATE TABLE users (
     updated_at    TIMESTAMPTZ   NOT NULL DEFAULT NOW(),
     deleted_at    TIMESTAMPTZ
 );
+-- Select all users from users table
+SELECT * FROM users;
+--insert a new user into users table
+INSERT INTO users (firstname, lastname, ident_number, email, password) VALUES ('Jonathan', 'rosero', '1089076883', 'deracamilo223@gmail.com', '12345');
