@@ -7,6 +7,7 @@ $ident_number = $_POST['idnumber'];
 $mobile_phone = $_POST['mphone'];
 $email = $_POST['email'];
 $password = MD5($_POST['pswd']);
+$PHOTO_URL='photos/photo-defautl.png';
 
 $sql_check_email = "SELECT * FROM users WHERE email='$email'";
 $res= pg_query($local_conn, $sql_check_email);
@@ -14,14 +15,15 @@ $total=pg_num_rows($res);
 if($total<1){
 // Prepare query
 $sql = "INSERT INTO 
-users (firstname, lastname, ident_number, mobile_phone, email, password)
+users (firstname, lastname, ident_number, mobile_phone, email, password, url_photo)
 VALUES (
 '$firstname',
 '$lastname',
 '$ident_number',
 '$mobile_phone',
 '$email',
-'$password'
+'$password',
+'$PHOTO_URL'
 )";
 
 // Execute query
