@@ -1,5 +1,5 @@
 <?php
-include"../settings/database.php";
+include("../settings/database.php");
 // Get payload from frontend
 $firstname = $_POST['fname'];
 $lastname = $_POST['lname'];

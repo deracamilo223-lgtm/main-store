@@ -56,7 +56,7 @@ $sql="SELECT
                     <a href="#">
                         <img src="icons/search.png" width="20" alt="Search user">
                     </a> |
-                    <a href="#">
+                    <a href="delete_user.php?userID=<?= $row['id']; ?>">
                         <img src="icons/delete.png" width="20" alt="Delete user">
                     </a>
                     </td>
