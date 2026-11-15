@@ -17,3 +17,5 @@ CREATE TABLE users (
 SELECT * FROM users;
 --insert a new user into users table
 INSERT INTO users (firstname, lastname, ident_number, email, password) VALUES ('Jonathan', 'rosero', '1089076883', 'deracamilo223@gmail.com', '12345');
+UPDATE users SET url_photo = 'photos/photo_default.jpg' WHERE id = 1;
+UPDATE users SET url_photo = 'photos/photo_default.jpg' WHERE id = 2;
