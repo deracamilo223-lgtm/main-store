@@ -22,6 +22,7 @@ http://localhost/main-store/settings/database.php
  
 
 //Supabase
+/*
     $supa_host = "aws-0-us-east-1.pooler.supabase.com";
     $supa_port = "6543";
     $supa_dbname = "postgres";
@@ -35,15 +36,17 @@ http://localhost/main-store/settings/database.php
         user=$supa_user
         password=$supa_password
     ");
+    */
 
     if (!$local_conn) {
         die("Error local connection");
     } else {
-       echo "Success database local connection";
+     //  echo "Success database local connection";
     }
+    /*
     if (!$supa_conn) {
-        die("Error supa connection");
+        //die("Error supa connection");
     } else {
        echo "<br>Success database supa connection";
-    }
+    }*/
 ?>

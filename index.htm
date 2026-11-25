@@ -1,19 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Store</title>
-    <link rel="icon" type="image/png" href="icons/icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            background-color: #f3f4f6;
+            height: 100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .card{
+            border-radius:12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding:30px;
+            text-align:center;
+        }
+    </style>
 </head>
 <body>
-
-    
-       <p>
-  <a href="http://127.0.0.1/main-store/src/signin.html">Sign in</a> |
-  <a href="http://127.0.0.1/main-store/src/signup.htm">Sign up</a>
-</p>
-   
-
+    <div class="card">
+        <h1>Main Store</h1>
+        <a href="src/signin.html" class="btn btn-primary m-2">Sign in</a>
+        <a href="src/signup.htm" class="btn btn-success m-2">Sign up</a>
+    </div>
 </body>
 </html>

@@ -1,17 +1,41 @@
-<?php
-/*
-Use this endpoint to test the request
-http://localhost/main-store/src/delete_user.php?userID=ANY-ID-NUMBER
-*/
-include("../settings/database.php");
 
-$userID = $_GET['userID'];
-$sql_delete_user = "DELETE FROM users WHERE id='$userID'";
-$res = pg_query($local_conn, $sql_delete_user);
-if (!$res) {
-    echo "<script>alert(' User hasn't been deleted successfully...');</script>";
-    header('refresh:0;url=list_users.php');
-} else {
-    echo"<script>alert('User has been deleted successfully');</script>";
-    header('refresh:0;url=list_users.php');
+<?php
+session_start();
+if(!isset($_SESSION['user_id'])){
+    header('refresh:0;url=signin.html');
+    exit();
 }
+
+include "../settings/database.php";
+
+if(isset($_GET['id'])) {
+    $userID = $_GET['id'];
+    
+    // No permitir eliminarse a sí mismo
+    if($userID == $_SESSION['user_id']) {
+        echo "<script>
+            alert('❌ No puedes eliminarte a ti mismo');
+            window.location='list_users.php';
+        </script>";
+        exit();
+    }
+    
+    $sql_delete_user = "DELETE FROM users WHERE id = $1";
+    $res = pg_query_params($local_conn, $sql_delete_user, array($userID));
+    
+    if ($res) {
+        echo "<script>
+            alert('✅ El usuario fue eliminado correctamente.');
+            window.location='list_users.php';
+        </script>";
+    } else {
+        echo "<script>
+            alert('❌ El usuario NO pudo ser eliminado. Inténtalo nuevamente.');
+            window.location='list_users.php';
+        </script>";
+    }
+} else {
+    header('Location: list_users.php');
+}
+?>
+
