@@ -1,0 +1,15 @@
+================================
+   CREDENCIALES DEL SISTEMA
+================================
+
+--- ADMINISTRADOR ---
+Correo electrónico: l@y
+Contraseña: ly
+Permisos: Administrador completo
+
+--- USUARIO NORMAL ---
+Correo electrónico: jo@r
+Contraseña: jor
+Permisos: Solo lectura
+
+================================
